@@ -1,0 +1,7 @@
+input
+*.o
+*.obj
+*.swp
+*.swo
+*.un~
+*_test.d
