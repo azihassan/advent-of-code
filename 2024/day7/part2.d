@@ -73,8 +73,8 @@ ulong evalulate(ulong[] equation, dchar[] operators, ulong expectedResult, out b
         }
         else
         {
-            //result = concatenate(result, equation[equationIndex]);
-            result = to!ulong(result.to!string ~ equation[equationIndex].to!string);
+            result = concatenate(result, equation[equationIndex]);
+            //result = to!ulong(result.to!string ~ equation[equationIndex].to!string);
         }
         if(result > expectedResult)
         {
@@ -88,8 +88,8 @@ ulong evalulate(ulong[] equation, dchar[] operators, ulong expectedResult, out b
 
 ulong concatenate(ulong a, ulong b)
 {
-    int length = 1;
-    while(length < b)
+    ulong length = 1;
+    while(length <= b)
     {
         length *= 10;
     }
